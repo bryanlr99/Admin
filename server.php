@@ -17,7 +17,7 @@ switch ($postType) {
         }
         break;
     case 'fillSelectCat':
-        $bd = 'controlaccess';
+        $bd = 'catreluserinformation';
 
         $sql = "SELECT table_name AS nombre
         FROM information_schema.tables WHERE table_schema = '{$bd}';";
