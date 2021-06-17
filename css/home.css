@@ -1,0 +1,48 @@
+body {
+    background: #C66F6F;
+}
+
+.container {
+    margin: 10px 0px 0px 0px;
+    padding: 50px;
+    max-width: 100%;
+    width: 100%;
+}
+
+#content-img {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.row {
+    margin-bottom: 40px;
+    height: 100px;
+}
+
+.card {
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.60);
+}
+
+.card:hover {
+    background: #81C6C8;
+    font-size: 24px;
+    color: white;
+}
+.nav-link{
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
