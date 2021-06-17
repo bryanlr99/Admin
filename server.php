@@ -285,7 +285,7 @@ switch ($postType) {
         CRUI.Curp,CRUI.Rfc,CRUI.FechaNacimiento,calle.Calle,colonia.Colonia,CRUI.CodigoPostal,municipio.Municipio,
         estado.Estado,CRUI.NumExt,cattipoperson.Tipo
         FROM
-        CatRelUserInformation AS CRUI
+        catreluserinformation AS CRUI
         INNER JOIN nombre ON CRUI.CvNombre = nombre.CvNombre
         INNER JOIN apellidos ON CRUI.CvApellidos = apellidos.CvApellido	
         INNER JOIN genero ON CRUI.CvGenero = genero.CvGenero		

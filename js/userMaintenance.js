@@ -10,7 +10,7 @@ $(document).ready(() => {
         url: "../server.php", // URL a la que estamos haciendo el request
         data: {
             postType: "fillSelect",
-            table: "CatRelUserInformation"
+            table: "catreluserinformation"
         },// data es un JSON que contiene los parámetros que se enviaran al servidor indicado en la url  
         async: true,// si es asincrónico o no
         success: function (resp) {
