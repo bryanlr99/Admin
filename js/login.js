@@ -1,7 +1,7 @@
 const ValidLogin = () => {
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
-    const table = "MUsuarios";
+    const table = "musuarios";
     const postType = "ValidLogin";
     let sqlSelect = `SELECT * FROM ${table} WHERE Login = '${login}' AND Password = '${password}'`;
 
