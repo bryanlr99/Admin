@@ -30,7 +30,7 @@ const fillSelect = () => {
 }
 
 const getDataTables = () => {
-    document.getElementById("new").disabled = false;
+    document.getElementById("new").disabled = true;
     const table = document.getElementById('catalogos').value;
     // console.log(table);
     $.ajax({
