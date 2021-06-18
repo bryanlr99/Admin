@@ -4,7 +4,7 @@ const changePassword = () => {
     const confirmNewPassword = document.getElementById("confirmNewPassword").value;
     const login = sessionStorage.getItem("user");
 
-    const table = "MUsuarios";
+    const table = "musuarios";
     const postType = "ChangePassword";
 
     let sqlSelect = `SELECT * FROM ${table} WHERE Login = '${login}' AND Password = '${password}'`;
