@@ -54,12 +54,22 @@
                     <div id="content-img">
                         <img src="../images/icon.svg" alt="" srcset="">
                     </div>
-                    <div class="container-buttons">
-                        <input class="actions-btn" type="button" name="new" id="new" value="Nuevo" onclick="nuevoLogin(this)">
-                        <input class="actions-btn" disabled type="button" name="delete" id="delete" value="Eliminar" onclick="deleteRegister()">
-                        <input class="actions-btn" disabled type="button" name="update" id="update" value="Modificar" onclick="updateAvailability(this)">
-                        <input class="actions-btn" disabled type="button" name="cancel" id="cancel" value="Cancelar" onclick="cancelar()">
-                        <input class="actions-btn" type="button" name="exit" id="exit" value="Salir" onclick="window.location.href = '../home'">
+                    <div class="row">
+                        <div class="col">
+                            <input class="actions-btn" type="button" name="new" id="new" value="Nuevo" onclick="nuevoLogin(this)">
+                        </div>
+                        <div class="col">
+                            <input class="actions-btn" disabled type="button" name="delete" id="delete" value="Eliminar" onclick="deleteRegister()">
+                        </div>
+                        <div class="col">
+                            <input class="actions-btn" disabled type="button" name="update" id="update" value="Modificar" onclick="updateAvailability(this)">
+                        </div>
+                        <div class="col">
+                            <input class="actions-btn" disabled type="button" name="cancel" id="cancel" value="Cancelar" onclick="cancelar()">
+                        </div>
+                        <div class="col">
+                            <input class="actions-btn" type="button" name="exit" id="exit" value="Salir" onclick="window.location.href = '../home'">
+                        </div>
                     </div>
                     <table id="dataTable" contenteditable="TRUE">
                     </table>
