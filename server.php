@@ -124,7 +124,7 @@ switch ($postType) {
                         mysqli_close($conexion);
                     } else {
                         mysqli_close($conexion);
-                        echo "Fecha en rango,$cvUser,$idCatRel";
+                        echo "Fecha en rango,$cvUser,$idCatRel,$date";
                     }
                 } else {
                     mysqli_close($conexion);

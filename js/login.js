@@ -26,6 +26,7 @@ const ValidLogin = () => {
                 sessionStorage.setItem("user", login);
                 sessionStorage.setItem("cvUser", resp.split(",")[1]);
                 sessionStorage.setItem("idCatRel", resp.split(",")[2]);
+                sessionStorage.setItem("fechaActual", resp.split(",")[3]);
 
             } else {
                 document.getElementById("message").innerText = resp;
