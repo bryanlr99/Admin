@@ -44,7 +44,7 @@
                                 </tr>
                             </table>
                             <div class="container-buttons">
-                                <input class="actions-btn" type="button" name="new" id="new" value="Nuevo" onclick="newRecord(this)">
+                                <input class="actions-btn" disabled type="button" name="new" id="new" value="Nuevo" onclick="newRecord(this)">
                                 <input class="actions-btn" disabled type="button" name="delete" id="delete" value="Eliminar" onclick="deleteRegister()">
                                 <input class="actions-btn" disabled type="button" name="update" id="update" value="Modificar" onclick="updateAvailability(this)">
                                 <input class="actions-btn" disabled type="button" name="cancel" id="cancel" value="Cancelar" onclick="cancelar()">
