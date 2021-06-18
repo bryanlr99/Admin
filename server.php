@@ -1,6 +1,7 @@
 <?php
 include('./mysqlConnection.php');
 $postType = $_POST["postType"];
+date_default_timezone_set("America/Mexico_City");
 switch ($postType) {
     case 'fillSelDatPerson':
         $table = $_POST["table"];
@@ -85,7 +86,7 @@ switch ($postType) {
             echo "solo columnas|" . json_encode($array);
         }
         break;
-    case 'ValidLogin':
+    case 'ValidLogin':                
         $table = $_POST["table"];
         $login = $_POST["login"];
         $password = $_POST["password"];
