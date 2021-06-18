@@ -30,8 +30,8 @@ const fillSelect = () => {
 }
 
 const getDataTables = () => {
-    document.getElementById("new").disabled = true;
     const table = document.getElementById('catalogos').value;
+    document.getElementById("new").disabled = false;
     // console.log(table);
     $.ajax({
         type: "POST", // tipo de request que estamos generando
