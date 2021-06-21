@@ -102,7 +102,7 @@ switch ($postType) {
                 $cvUser = $row["CvUser"];
                 $idCatRel = $row["IdCatRelInfo"];
             }
-            if ($status === "1") {
+            if ($status === "1" || $status === 1) {
                 $sqlValidDateIni = "SELECT * FROM $table WHERE Login = '{$login}' AND `Password` = '{$password}' AND
                 (STR_TO_DATE('{$date}','%Y-%m-%d') >= STR_TO_DATE(`FechaIni`, '%Y-%m-%d'));";
 
