@@ -14,6 +14,7 @@ const changePassword = () => {
         postType,
         sqlSelect,
         sqlUpdatePass,
+        password,
         newPassword,
         confirmNewPassword
     }

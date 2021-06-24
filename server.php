@@ -86,7 +86,7 @@ switch ($postType) {
             echo "solo columnas|" . json_encode($array);
         }
         break;
-    case 'ValidLogin':                
+    case 'ValidLogin':
         $table = $_POST["table"];
         $login = $_POST["login"];
         $password = $_POST["password"];
@@ -203,20 +203,25 @@ switch ($postType) {
     case "ChangePassword":
         $sqlSelect = $_POST["sqlSelect"];
         $sqlUpdatePass = $_POST["sqlUpdatePass"];
+        $password = $_POST["password"];
         $newPassword = $_POST["newPassword"];
         $confirmNewPassword = $_POST["confirmNewPassword"];
 
         $result = $conexion->query($sqlSelect);
         if ($result->num_rows > 0) {
-            // output data of each row
+            // output data of each row           
             if ($newPassword === $confirmNewPassword) {
-                if ($conexion->query($sqlUpdatePass) === TRUE) {
-                    echo "Contraseña actualizada";
+                if ($password === $newPassword) {
+                    echo "La nueva contraseña es igual a la anterior";
                 } else {
-                    echo "Error: " . $sqlUpdatePass . "<br>" . $conexion->error;
+                    if ($conexion->query($sqlUpdatePass) === TRUE) {
+                        echo "Contraseña actualizada";
+                    } else {
+                        echo "Error: " . $sqlUpdatePass . "<br>" . $conexion->error;
+                    }
                 }
             } else {
-                echo "Las contraseñas no coinciden";
+                echo "Las nuevas contraseñas no coinciden";
             }
         } else {
             echo "La contraseña anterior es incorrecta";
