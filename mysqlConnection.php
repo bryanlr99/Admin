@@ -1,10 +1,10 @@
 <?php
 
 //Define your host here.
-$HostName = "byvy7ymxwe3qqrkixqxa-mysql.services.clever-cloud.com";
-$DatabaseName = "byvy7ymxwe3qqrkixqxa";
-$HostUser = "uwjgvncqzgkbvoiv";
-$HostPass = 'uwjgvncqzgkbvoiv';
+$HostName = "remotemysql.com";
+$DatabaseName = "ynTEBiVJVS";
+$HostUser = "ynTEBiVJVS";
+$HostPass = 'KCoj2kUYrl';
 
 $conexion = mysqli_connect($HostName, $HostUser, $HostPass, $DatabaseName);
 
