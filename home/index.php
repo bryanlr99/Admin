@@ -12,6 +12,9 @@
 
 <body>
     <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <div class="nav-link" id="user"></div>
+        </li>
         <li class="nav-item" onclick="logout()">
             <div class="nav-link">Cerrar sesíon</div>
         </li>
@@ -50,6 +53,7 @@
     <script>
         $(document).ready(() => {
             const login = sessionStorage.getItem("login")
+            document.getElementById("user").innerText = sessionStorage.getItem("test");
             if (login !== "true") {
                 window.location.href = "../";
             }
