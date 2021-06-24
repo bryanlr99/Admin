@@ -53,7 +53,7 @@
     <script>
         $(document).ready(() => {
             const login = sessionStorage.getItem("login")
-            document.getElementById("user").innerText = sessionStorage.getItem("test");
+            document.getElementById("user").innerText = sessionStorage.getItem("user");
             if (login !== "true") {
                 window.location.href = "../";
             }
