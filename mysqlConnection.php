@@ -1,10 +1,10 @@
 <?php
 
 //Define your host here.
-$HostName = "sql10.freesqldatabase.com";
-$DatabaseName = "sql10419797";
-$HostUser = "sql10419797";
-$HostPass = 'YEHh27ieuL';
+$HostName = "byvy7ymxwe3qqrkixqxa-mysql.services.clever-cloud.com";
+$DatabaseName = "byvy7ymxwe3qqrkixqxa";
+$HostUser = "uwjgvncqzgkbvoiv";
+$HostPass = 'uwjgvncqzgkbvoiv';
 
 $conexion = mysqli_connect($HostName, $HostUser, $HostPass, $DatabaseName);
 
