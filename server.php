@@ -255,11 +255,17 @@ switch ($postType) {
     case 'InsertFromCatMaintenance':
         $sqlSelect = $_POST["sqlSelect"];
         $sqlInsert = $_POST["sqlInsert"];
-        if ($conexion->query($sqlInsert) === TRUE) {
-            $last_id = $conexion->insert_id;
-            echo "Registro insertado correctamente_{$last_id}";
+        $result = $conexion->query($sqlSelect);
+
+        if ($result->num_rows > 0) {
+            echo "Existente_0";
         } else {
-            echo "Error: " . $sqlInsert . "<br>" . $conexion->error;
+            if ($conexion->query($sqlInsert) === TRUE) {
+                $last_id = $conexion->insert_id;
+                echo "Registro insertado correctamente_{$last_id}";
+            } else {
+                echo "Error: " . $sqlInsert . "<br>" . $conexion->error;
+            }
         }
         break;
     case 'CatRelInfo':

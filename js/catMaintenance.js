@@ -210,11 +210,15 @@ const newRecord = (node) => {
         description.disabled = false;
 
     } else {
-        node.value = "Nuevo";
-        insertUser();
-        document.getElementById("cancel").disabled = false;
-        description.disabled = true;
-        description.value = "";
+        if (description === '' || description === ' ') {
+            alert('El campo Descripción no debe estar vacío');
+        } else {
+            node.value = "Nuevo";
+            insertUser();
+            document.getElementById("cancel").disabled = false;
+            description.disabled = true;
+            description.value = "";
+        }
     }
 }
 
@@ -238,6 +242,7 @@ const insertUser = () => {
     } else {
         // sqlInsert = `INSERT INTO ${table} (${sessionStorage.getItem("columnsInsert")}) VALUES 
         // ('${description}')`;
+        sqlSelect = `SELECT * FROM ${table} WHERE ${sessionStorage.getItem("columnsInsert")} = BINARY '${description}'`
         sqlInsert = `INSERT INTO ${table} VALUES (NULL,'${description}')`;
 
     }
@@ -261,9 +266,11 @@ const insertUser = () => {
                 sessionStorage.setItem("lastIdByTableAux", response[1]);//ultimo id por tabla
                 alert("Registro insertado correctamente")
                 // insertUpdateCatRel();
-            }
-            getDataTables();
-            cancelar();
+                getDataTables();
+                cancelar();
+            } else if (response[0] === "Existente") {
+                alert(`El registro "${description} ya existe"`)
+            }        
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) { // función que va a ejecutar si hubo algún tipo de error en el pedido
             console.log(errorThrown);
