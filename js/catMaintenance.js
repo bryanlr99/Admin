@@ -215,14 +215,14 @@ const newRecord = (node) => {
         description.disabled = false;
 
     } else {
-        if (description === '' || description === ' ') {
+        if (description.value === '' || description.value === ' ') {
             alert('El campo Descripción no debe estar vacío');
         } else {
             node.value = "Nuevo";
             insertUser();
-            document.getElementById("cancel").disabled = false;
-            description.disabled = true;
-            description.value = "";
+            document.getElementById("cancel").disabled = true;
+            // description.disabled = true;
+            // description.value = "";
         }
     }
 }
@@ -241,8 +241,10 @@ const insertUser = () => {
 
     if (table === "apellidos") {
         let validColumn = description.split(" ");
+        let cols = sessionStorage.getItem("columnsInsert").split(",");
         // sqlInsert = `INSERT INTO ${table} (${sessionStorage.getItem("columnsInsert")}) VALUES 
         // ('${validColumn[0]}', '${validColumn[1]}')`;
+        sqlSelect = `SELECT * FROM ${table} WHERE ${cols[0]} = BINARY '${validColumn[0]}' AND ${cols[1]} = BINARY '${validColumn[1]}'`
         sqlInsert = `INSERT INTO ${table} VALUES (NULL,'${validColumn[0]}', '${validColumn[1]}')`;
     } else {
         // sqlInsert = `INSERT INTO ${table} (${sessionStorage.getItem("columnsInsert")}) VALUES 
