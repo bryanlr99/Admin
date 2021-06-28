@@ -11,14 +11,22 @@
 </head>
 
 <body>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <div class="nav-link" id="user"></div>
-        </li>
-        <li class="nav-item" onclick="logout()">
-            <div class="nav-link">Cerrar sesíon</div>
-        </li>
-    </ul>
+    <nav class="navbar navbar-expand-lg bg-light" style="background-color: #E3F2FD;">
+        <h5 class="navbar-brand">Inicio</h5>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="nav-link" style="text-decoration: none;" id="user"></div>
+                </li>
+                <li class="nav-item" onclick="logout()">
+                    <div class="nav-link" style="text-decoration: none;">Cerrar sesíon</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div id="content-img">
             <img src="../images/icon.svg" alt="" srcset="">
@@ -53,7 +61,7 @@
     <script>
         $(document).ready(() => {
             const login = sessionStorage.getItem("login")
-            document.getElementById("user").innerText = sessionStorage.getItem("user");
+            document.getElementById("user").innerText = 'Cuenta en sesión: ' + sessionStorage.getItem("user").toUpperCase();
             if (login !== "true") {
                 window.location.href = "../";
             }

@@ -1,6 +1,6 @@
 const ValidLogin = () => {
-    const login = document.getElementById("login").value;
-    const password = document.getElementById("password").value;
+    let login = document.getElementById("login").value;
+    let password = document.getElementById("password").value;
     const table = "musuarios";
     const postType = "ValidLogin";
     let sqlSelect = `SELECT * FROM ${table} WHERE Login = '${login}' AND Password = '${password}'`;
@@ -20,7 +20,8 @@ const ValidLogin = () => {
         success: function (resp) {
             console.log(resp);
             if (resp.split(",")[0] === "Fecha en rango") {
-
+                login = '';
+                password = '';
                 window.location.href = "./home"
                 sessionStorage.setItem("login", "true");
                 sessionStorage.setItem("user", login);

@@ -11,6 +11,19 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-light" style="background-color: #E3F2FD;">
+        <h5 class="navbar-brand">Mantenimiento de datos personales</h5>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="nav-link" style="text-decoration: none;" id="user"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -220,6 +233,7 @@
     <script>
         $(document).ready(() => {
             const login = sessionStorage.getItem("login");
+            document.getElementById("user").innerText = 'Cuenta en sesión: ' + sessionStorage.getItem("user").toUpperCase();
             if (login !== "true") {
                 window.location.href = "../";
             }
