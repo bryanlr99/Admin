@@ -55,6 +55,11 @@ const getDataTables = () => {
                 let td = "";
                 for (let h = 0; h < tHeader.length; h++) {
                     th += `<th>${tHeader[h]}</th>`;
+                    if (table === 'apellidos') {
+                        sessionStorage.setItem("columnsInsert", `${tHeader[1]},${tHeader[2]}`)
+                    } else {
+                        sessionStorage.setItem("columnsInsert", tHeader[1])
+                    }
                 }
                 // th += `<th>Acción</th>`;
                 tr = `<tr contenteditable="false">${th}</tr>`
@@ -270,7 +275,7 @@ const insertUser = () => {
                 cancelar();
             } else if (response[0] === "Existente") {
                 alert(`El registro "${description} ya existe"`)
-            }        
+            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) { // función que va a ejecutar si hubo algún tipo de error en el pedido
             console.log(errorThrown);
