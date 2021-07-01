@@ -62,7 +62,7 @@
                             <input class="form-control" type="date" disabled value="2021-01-10" id="FechaFin">
                         </div>
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="EdoCta">
+                            <input class="form-check-input" disabled type="checkbox" value="" checked id="EdoCta">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Estado de la cuenta
                             </label>
