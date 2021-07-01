@@ -207,7 +207,7 @@ const updateUser = () => {
                 getDataTables();
                 cancelar();
             } else if (JSON.parse(resp).length > 0) {
-                alert("Registro existente!")
+                alert("Registro existente! ", + description);
             }
 
         },
@@ -356,12 +356,13 @@ const insertUpdateCatRel = () => {
 
 const deleteRegister = (node) => {
     deleteNode = parseInt(sessionStorage.getItem("idRecord"));
+    let description = document.getElementById("description").value
     let cvuser = parseInt(sessionStorage.getItem("cvUser"));
     if (deleteNode === cvuser) {
         alert("No puedes eliminar este registro, porque esta en uso")
     } else {
         $('#modalEliminar').modal('show');
-        $('#txtModal').text(`¿Deseas eliminar, el registro con Clave igual a ${deleteNode}?`);
+        $('#txtModal').text(`¿Deseas eliminar, el registro '${description}'?`);
     }
 }
 
