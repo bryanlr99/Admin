@@ -32,25 +32,6 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-floating">
-                                <select class="form-select" disabled id="nombre" aria-label="Floating label select example">
-                                    <option selected>Selecciona una opción</option>
-                                </select>
-                                <label for="nombre">Nombre</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-floating">
-                                <select class="form-select" disabled id="apellidos" aria-label="Floating label select example">
-                                    <option selected>Selecciona una opción</option>
-                                </select>
-                                <label for="apellidos">Apellidos</label>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-floating">
                                 <select class="form-select" disabled id="cattipoperson" aria-label="Floating label select example">
                                     <option selected>Selecciona una opción</option>
                                 </select>
@@ -64,12 +45,30 @@
                             </div>
                         </div>
                     </div>
-                    <br />
                     <div class="row">
                         <div class="col">
                             <div class="form-floating">
                                 <input type="text" class="form-control" disabled id="rfc" maxlength="13" placeholder=" " value="">
                                 <label for="rfc">RFC</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating">
+                                <select class="form-select" disabled id="nombre" aria-label="Floating label select example">
+                                    <option selected>Selecciona una opción</option>
+                                </select>
+                                <label for="nombre">Nombre</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <select class="form-select" disabled id="apellidos" aria-label="Floating label select example">
+                                    <option selected>Selecciona una opción</option>
+                                </select>
+                                <label for="apellidos">Apellidos</label>
                             </div>
                         </div>
                         <div class="col">

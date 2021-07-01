@@ -58,12 +58,12 @@ const nuevoLogin = (node) => {
     } else {
         // node.value = "Nuevo";
         insertUser();
-        document.getElementById("cancel").disabled = false;
-        inputs.map((id) => {
-            let element = document.getElementById(id);
-            element.disabled = true;
-            element.value = "";
-        });
+        // document.getElementById("cancel").disabled = false;
+        // inputs.map((id) => {
+        //     let element = document.getElementById(id);
+        //     element.disabled = true;
+        //     element.value = "";
+        // });
     }
 }
 
@@ -98,10 +98,11 @@ const insertUser = () => {
         success: function (resp) {
             console.log("resp insert", resp);
             if (resp === "Registro insertado correctamente") {
+                document.getElementById("new").value = "Nuevo"
                 alert(resp);
                 getDataTables();
                 cancelar();
-            } else if (resp === "Login y/o contraseña existentes") {
+            } else if (resp === "Login y/o contraseña existentes") {                
                 alert("Registro con Curp existente!" + curp)
             }
 
