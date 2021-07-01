@@ -22,12 +22,12 @@ const ValidLogin = () => {
             if (resp.split(",")[0] === "Fecha en rango") {
                 login = '';
                 password = '';
-                window.location.href = "./home"
                 sessionStorage.setItem("login", "true");
                 sessionStorage.setItem("user", login);
                 sessionStorage.setItem("cvUser", resp.split(",")[1]);
                 sessionStorage.setItem("idCatRel", resp.split(",")[2]);
                 sessionStorage.setItem("fechaActual", resp.split(",")[3]);
+                window.location.href = "./home"
 
             } else {
                 document.getElementById("message").innerText = resp;
