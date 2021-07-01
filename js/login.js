@@ -19,14 +19,15 @@ const ValidLogin = () => {
         async: true,// si es asincrónico o no
         success: function (resp) {
             console.log(resp);
-            if (resp.split(",")[0] === "Fecha en rango") {
-                login = '';
-                password = '';
+            if (resp.split(",")[0] === "Fecha en rango") {              
                 sessionStorage.setItem("login", "true");
                 sessionStorage.setItem("user", login);
+                localStorage.setItem("user", login);
                 sessionStorage.setItem("cvUser", resp.split(",")[1]);
                 sessionStorage.setItem("idCatRel", resp.split(",")[2]);
                 sessionStorage.setItem("fechaActual", resp.split(",")[3]);
+                login = '';
+                password = '';
                 window.location.href = "./home"
 
             } else {

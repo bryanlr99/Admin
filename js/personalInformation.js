@@ -72,6 +72,7 @@ const insertUser = () => {
     const postType = "Insert";
     let curp = document.getElementById("curp").value;
     let rfc = document.getElementById("rfc").value;
+    let cattipoperson = document.getElementById("cattipoperson").value;
     let values = inputs.map((id) => {
         let element = document.getElementById(id);
         if (id === "nombre" || id === "apellidos" || id === "edad" || id === "genero" || id === "telefono"
@@ -82,7 +83,7 @@ const insertUser = () => {
 
     let sqlInsert = `INSERT INTO ${table} (CvNombre,CvApellidos,Edad,CvGenero,Email,Telefono,Curp,Rfc,FechaNacimiento,CvCalle,CvColonia,CodigoPostal,CvMunicipio,CvEstado,NumExt,CvTipoPersona) VALUES 
     (${values.join(",")})`;
-    let sqlSelect = `SELECT * FROM ${table} WHERE Curp ='${curp}' Or Rfc = '${rfc}'`;
+    let sqlSelect = `SELECT * FROM ${table} WHERE CvTipoPersona = ${parseInt(cattipoperson)} AND (Curp ='${curp}' Or Rfc = '${rfc}')`;
     console.log(sqlInsert)
     console.log(sqlSelect)
 
