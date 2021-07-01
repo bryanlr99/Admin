@@ -32,7 +32,9 @@ const fillSelect = () => {
 const getDataTables = () => {
     const table = document.getElementById('catalogos').value;    
     document.getElementById("new").disabled = false;
-    cancelar();
+    let description = document.getElementById("description");
+    description.value = '';
+    description.disabled = true;
     // console.log(table);
     $.ajax({
         type: "POST", // tipo de request que estamos generando
@@ -371,6 +373,10 @@ const deleteRegisterModal = () => {
         },// data es un JSON que contiene los parámetros que se enviaran al servidor indicado en la url  
         async: true,// si es asincrónico o no
         success: function (resp) {
+            console.log("eliminado",resp)
+            if(resp.includes('ERROR')){
+                alert('El registro no puede ser eliminado ya que son datos de otro usuario')
+            }
             getDataTables();
             cancelar();
         },
