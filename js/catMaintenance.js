@@ -30,7 +30,7 @@ const fillSelect = () => {
 }
 
 const getDataTables = () => {
-    const table = document.getElementById('catalogos').value;    
+    const table = document.getElementById('catalogos').value;
     document.getElementById("new").disabled = false;
     let description = document.getElementById("description");
     description.value = '';
@@ -151,10 +151,15 @@ const updateAvailability = (node) => {
         document.getElementById("cancel").disabled = false;
         document.getElementById("delete").disabled = true;
         description.disabled = false;
-    } else {
-        // node.value = "Modificar";
-        updateUser();
-        document.getElementById("cancel").disabled = false;
+    } else {        
+        if (description.value === '' || description.value === ' ') {
+            alert('El campo Descripción no debe estar vacío');
+        } else {
+            // node.value = "Modificar";
+            updateUser();
+            document.getElementById("cancel").disabled = false;
+        }
+
     }
 }
 
@@ -173,11 +178,15 @@ const updateUser = () => {
     let sqlSelect = "";
     if (column === "CvApellido") {
         let columns = sessionStorage.getItem("columnsInsert").split(",");
-        description = description.split(" ");
+        description = description.split(" ");        
+        let cols = sessionStorage.getItem("columnsInsert").split(",");
+        sqlSelect = `SELECT * FROM ${table} WHERE ${cols[0]} = BINARY '${description[0]}' AND ${cols[1]} = BINARY '${description[1]}'`        
+
         sqlUpdate = `UPDATE ${table} 
         SET ${columns[0]} = '${description[0]}', ${columns[1]} = '${description[1]}' WHERE ${column} = ${id}`;
     } else {
         let columns = sessionStorage.getItem("columnsInsert");
+        sqlSelect = `SELECT * FROM ${table} WHERE ${sessionStorage.getItem("columnsInsert")} = BINARY '${description}'`
         sqlUpdate = `UPDATE ${table} SET ${columns} = '${description}' WHERE ${column} = ${id}`;
     }
 
@@ -193,7 +202,8 @@ const updateUser = () => {
         success: function (resp) {
             console.log(resp)
             if (resp === "Records were updated successfully") {
-                alert("Registro actualizado correctamente!")
+                alert("Registro actualizado correctamente!");
+                document.getElementById("update").value = 'Modificar';
                 getDataTables();
                 cancelar();
             } else if (JSON.parse(resp).length > 0) {
@@ -373,8 +383,8 @@ const deleteRegisterModal = () => {
         },// data es un JSON que contiene los parámetros que se enviaran al servidor indicado en la url  
         async: true,// si es asincrónico o no
         success: function (resp) {
-            console.log("eliminado",resp)
-            if(resp.includes('ERROR')){
+            console.log("eliminado", resp)
+            if (resp.includes('ERROR')) {
                 alert('El registro no puede ser eliminado ya que son datos de otro usuario')
             }
             getDataTables();
